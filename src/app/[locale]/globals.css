@@ -16,6 +16,16 @@
   }
 }
 
+.custom-hover-effect {
+  @apply hover:filter hover:brightness-125 transition duration-300 ease-in-out;
+}
+
+html {
+  font-size: 62.5%; /* Isso faz com que 1rem = 10px */
+  scroll-behavior: auto;
+
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -31,3 +41,5 @@ body {
     text-wrap: balance;
   }
 }
+
+

@@ -1,0 +1,23 @@
+{
+  "Hello": {
+    "hello": "Hi, I'm",
+    "position": "a Frontend Developer",
+    "description": "Transforming ideas into elegant and visually appealing solutions with <Highlighted>flexibility and attention to detail</Highlighted>, simplifying processes and delivering clear and concise code."
+  },
+  "AboutMe": {
+    "title": "Sobre Mim",
+    "description": "Comecei minha carreira em 2021 como desenvolvedor frontend, trabalhando com JavaScript puro e focando em designs simples para várias empresas.Com o tempo, expandi minhas habilidades para o backend e me especializei ainda mais em desenvolvimento frontend. Eu tenho uma verdadeira paixão por criar landing pages cativantes. Atualmente, continuo como desenvolvedor frontend, usando JavaScript puro, React e Next.js para criar experiências digitais envolventes e eficazes, sempre seguindo as últimas tendências do setor. Sou bastante eclético musicalmente, apreciando tudo, desde MPB e sertanejo até eletrônico e pop. Além disso, adoro estar em contato com a natureza, fazer trilhas e correr nos parques da cidade. Tenho dois pets, o Cão, um cachorro, e Dani, uma gata, que ficam na fazenda quando viajo."
+  },
+  "MyWork": {
+    "title": "My Work",
+    "description": "The technologies I use are listed below."
+  },
+  "Reviews": {
+    "title": "Reviews",
+    "description": "Reviews de clientes"
+  },
+  "Contact": {
+    "title": "Send me a message",
+    "description": "Contact me"
+  }
+}
