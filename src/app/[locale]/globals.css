@@ -22,7 +22,7 @@
 
 html {
   font-size: 62.5%; /* Isso faz com que 1rem = 10px */
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 
 }
 
