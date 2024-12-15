@@ -1,22 +1,20 @@
 import classNames from "classnames";
 
-type TextInputProps = {
-  className?: string;
+type ButtonProps = {
   id: string;
-  label: string;
   name?: string;
-  placeholder?: string;
+  className?: string;
   onClick?: () => void;
 };
 
-export const Button = (props: TextInputProps) => {
-  const { className, id, name, onClick, placeholder } = props;
+export const Button = (props: ButtonProps) => {
+  const { className, id, name, onClick } = props;
 
   const classes = classNames(className);
 
   return (
     <div
-      className={`flex flex-col hover:filter  hover:brightness-110 justify-center rounded-lg items-center font-quicksand text-custom-18 bg-gradient-to-r h-[5.8rem]  w-full max-w-[27rem] sm:max-w-[25.4rem] `}
+      className={`flex hover:filter hover:brightness-110 justify-center rounded-lg items-center font-quicksand text-custom-18 bg-gradient-to-r h-[5.8rem] w-full  sm:max-w-[25.4rem] ${classes}`}
     >
       <button
         type="button"

@@ -15,12 +15,15 @@ export const TextInput = (props: TextInputProps) => {
 
   const classes = classNames(
     className,
-    "text-custom-24 border-b-2 border-border-green bg-transparent text-primary-green outline-none",
+    "text-custom-14 sm:text-custom-24 border-b-2 border-border-green bg-transparent text-primary-green outline-none",
   );
 
   return (
     <div className={`flex flex-col font-quicksand`}>
-      <label htmlFor={id} className="text-custom-18 text-border-green">
+      <label
+        htmlFor={id}
+        className=" text-custom-12 sm:text-custom-18 text-border-green"
+      >
         {label}
       </label>
 
