@@ -1,17 +1,41 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 import { Header } from "@components/shared/Header";
 import { Text } from "@components/shared/Text";
-import { useTranslations } from "next-intl";
 import { SECTIONS } from "src/constants/sections";
 import logo from "@public/opacity.svg";
-import { motion } from "framer-motion";
 
 export const HelloSection = () => {
   const t = useTranslations("Hello");
+
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["end end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0.1, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 0.8]);
+  const position = useTransform(scrollYProgress, (pos) => {
+    if (pos >= 1) {
+      return "relative";
+    }
+    return pos === 0.5 ? "relative" : "fixed";
+  });
+
   return (
-    <section id={SECTIONS.HELLO} className={`h-screen `}>
-      <div className="flex flex-col h-full relative">
+    <motion.section
+      id={SECTIONS.HELLO}
+      className={`h-screen `}
+      ref={targetRef}
+      style={{ opacity }}
+    >
+      <motion.div className="flex flex-col h-full relative">
         <Header />
         <motion.div
           className="flex"
@@ -35,18 +59,16 @@ export const HelloSection = () => {
 
         <div className="flex flex-col flex-1 items-center justify-center">
           <motion.div
-            // O texto começa fora da tela (acima)
             initial={{ y: "-500px", opacity: 0 }}
-            // Animação de descida com bounce, terminando na posição final (y: 0)
             animate={{ y: 0, opacity: 1 }}
-            // Configuração da transição para criar o efeito de bounce
             transition={{
-              duration: 2000, // Duração total da animação
-              ease: "easeInOut", // Suavização para a descida
-              opacity: { duration: 1 }, // Animação de opacidade mais rápida
-              type: "spring", // Efeito de bounce
-              stiffness: 40, // Ajuste da rigidez para o efeito spring
+              duration: 2000,
+              ease: "easeInOut",
+              opacity: { duration: 1 },
+              type: "spring",
+              stiffness: 40,
             }}
+            style={{ scale, x: "0%", position }}
           >
             <div className="relative">
               <Text className="text-custom-64 font-light">{t("hello")}</Text>
@@ -64,7 +86,7 @@ export const HelloSection = () => {
             </div>
           </motion.div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };

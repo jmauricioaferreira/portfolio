@@ -19,10 +19,9 @@ export const Divider = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null); // Ref para a imagem
 
-  // Variáveis do scroll
   const { scrollYProgress } = useScroll({
     target: lineRef,
-    offset: ["start end", "end start"], // Controla quando a animação começa e termina
+    offset: ["start end", "end start"],
   });
 
   const lineWidth = useTransform(scrollYProgress, [0.05, 0.4], ["0%", "50%"]);
@@ -54,14 +53,12 @@ export const Divider = () => {
   };
   return (
     <div className="flex h-screen relative items-center justify-between gap-40 w-full h-50 pt-20 px-5 my-32">
-      {/* Linha animada */}
       <motion.div
         ref={lineRef}
         style={{ width: lineWidth }}
         className="flex h-px bg-primary-green top-0"
       ></motion.div>
 
-      {/* Texto animado */}
       <motion.div
         className="flex w-1/2 "
         style={{
@@ -76,14 +73,12 @@ export const Divider = () => {
         </Text>
       </motion.div>
 
-      {/* Imagem de fundo */}
-
       <motion.div
         ref={imageRef}
         className="absolute right-1/3 top-1/3"
         variants={imageVariants}
         initial="hidden"
-        animate={controls} // Controlando animação via useAnimation
+        animate={controls}
       >
         <Image src={logo} width={500} height={500} alt={""} />
       </motion.div>

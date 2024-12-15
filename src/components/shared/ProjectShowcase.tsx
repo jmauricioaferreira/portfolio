@@ -1,9 +1,10 @@
-import classNames from "classnames";
+"use client";
 import Image from "next/image";
 import accessControl from "@public/access-control.png";
 import { Text } from "./Text";
 import { Highlighted } from "./HighLighted";
-import { div } from "framer-motion/client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 type TextProps = {
   className?: string;
@@ -64,17 +65,28 @@ const ShowcaseFooter = () => {
 
 export const ProjectShowcase = (props: TextProps) => {
   const { children, className } = props;
+  const targetRef = useRef<HTMLDivElement>(null);
 
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"], // Controla quando a animação começa e termina
+  });
+  const textX = useTransform(scrollYProgress, [0.1, 0.4], ["-100%", "0px"]);
+  const imageX = useTransform(scrollYProgress, [0.1, 0.4], ["150%", "0px"]);
+  const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
   return (
-    <div className={`flex gap-10  px-64`}>
-      <div className="flex-1">
+    <motion.div className={`flex gap-10  px-64`} ref={targetRef}>
+      <motion.div className="flex-1" style={{ x: textX, opacity }}>
         <Image src={accessControl} alt={""} />
-      </div>
-      <div className="flex flex-col w-[67rem] gap-8">
+      </motion.div>
+      <motion.div
+        className="flex flex-col w-[67rem] gap-8"
+        style={{ x: imageX, opacity }}
+      >
         <ShowcaseHeader />
         <ShowcaseBody />
         <ShowcaseFooter />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

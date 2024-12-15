@@ -8,6 +8,12 @@ export const SendMessageButton = () => {
   const [name, setName] = useState("John Doe");
 
   return (
-    <Button id="name" label="Your Name" name="Enviar" onClick={() => {}} />
+    <Button
+      className="w-full"
+      id="name"
+      label="Your Name"
+      name="Enviar"
+      onClick={() => {}}
+    />
   );
 };
