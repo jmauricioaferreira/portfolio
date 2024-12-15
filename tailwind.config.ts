@@ -34,6 +34,8 @@ const config: Config = {
         "custom-24": "2.4rem",
         "custom-18": "1.8rem",
         "custom-14": "1.4rem",
+        "custom-12": "1.2rem",
+        "custom-10": "1rem",
       },
     },
   },
