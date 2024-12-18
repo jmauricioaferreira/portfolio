@@ -18,6 +18,11 @@
   },
   "Contact": {
     "title": "Send me a message",
-    "description": "Contact me"
+    "description": "Contact me",
+    "placeholders": {
+      "name": "Enter your name",
+      "email": "Enter your email",
+      "message": "Hello, I am interested in your work. Can we schedule a time to discuss how you can help simplify our processes and create visually appealing websites?"
+    }
   }
 }

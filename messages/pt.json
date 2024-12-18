@@ -24,6 +24,11 @@
   },
     "Contact": {
     "title": "Envie uma mensagem",
-    "description": "Contact me"
+    "description": "Contact me",
+    "placeholders": {
+      "name": "Digite seu nome",
+      "email": "Digite seu e-mail",
+      "message": "Olá, estou interessado no seu trabalho. Podemos agendar um horário para discutir como você pode nos ajudar a simplificar nossos processos e criar sites visualmente atraentes?"
+    }
   }
 }
