@@ -5,13 +5,16 @@ type TextInputProps = {
   id: string;
   label: string;
   value?: string;
+  name?: string;
   placeholder?: string;
-  setValue: React.Dispatch<React.SetStateAction<string>>;
+  onChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
   type?: "text" | "textarea";
 };
 
 export const TextInput = (props: TextInputProps) => {
-  const { className, id, label, value, setValue, placeholder } = props;
+  const { className, id, label, value, placeholder, name, onChange } = props;
 
   const classes = classNames(
     className,
@@ -22,7 +25,7 @@ export const TextInput = (props: TextInputProps) => {
     <div className={`flex flex-col font-quicksand`}>
       <label
         htmlFor={id}
-        className=" text-custom-12 sm:text-custom-18 text-border-green"
+        className="text-custom-12 sm:text-custom-18 text-border-green"
       >
         {label}
       </label>
@@ -33,8 +36,9 @@ export const TextInput = (props: TextInputProps) => {
           className={classes}
           value={value}
           placeholder={placeholder}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
           rows={5}
+          name={name}
         />
       ) : (
         <input
@@ -42,7 +46,8 @@ export const TextInput = (props: TextInputProps) => {
           className={classes}
           value={value}
           placeholder={placeholder}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={onChange}
+          name={name}
         />
       )}
     </div>
