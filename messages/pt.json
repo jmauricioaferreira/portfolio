@@ -1,4 +1,11 @@
 {
+  "Menu": {
+    "hello": "Olá",
+    "about-me": "Sobre mim",
+    "my-work": "Meus projetos",
+    "reviews": "Reviews",
+    "contact": "Contato"
+  },
   "Hello": {
     "hello": "Olá, eu sou",
     "position": "Desenvolvedor Frontend",

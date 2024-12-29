@@ -1,4 +1,11 @@
 {
+  "Menu": {
+    "hello": "Hello",
+    "about-me": "About me",
+    "my-work": "My work",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
   "Hello": {
     "hello": "Hi, I'm",
     "position": "a Frontend Developer",
