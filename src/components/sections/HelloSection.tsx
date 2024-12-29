@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import { Header } from "@components/shared/Header";
+import { Menu } from "@components/shared/Menu";
 import { Text } from "@components/shared/Text";
 import { SECTIONS } from "src/constants/sections";
 import logo from "@public/opacity.svg";
@@ -36,7 +36,6 @@ export const HelloSection = () => {
       style={{ opacity }}
     >
       <motion.div className="flex flex-col h-full relative">
-        <Header />
         <motion.div
           className="flex"
           initial={{ opacity: 0 }}
@@ -69,6 +68,7 @@ export const HelloSection = () => {
               stiffness: 40,
             }}
             style={{ scale, x: "0%", position }}
+            className="flex justify-between items-center gap-96"
           >
             <div className="relative">
               <Text className="text-custom-64 font-light">{t("hello")}</Text>
@@ -84,6 +84,7 @@ export const HelloSection = () => {
                 </Text>
               </div>
             </div>
+            <Menu />
           </motion.div>
         </div>
       </motion.div>

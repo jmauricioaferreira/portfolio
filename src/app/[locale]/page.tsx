@@ -5,12 +5,14 @@ import { MyWorkSection } from "@components/sections/MyWorkSection";
 import { ReviewsSection } from "@components/sections/ReviewsSection";
 import { Divider } from "@components/shared/Divider";
 import SectionsObserver from "@components/sections/SectionsObserver";
+import { Header } from "@components/shared/Header";
 
 export default function Home() {
   return (
     <>
       <SectionsObserver />
       <main className="flex flex-col overflow-x-hidden">
+        <Header />
         <div className="flex flex-col bg-gradient-primary">
           <HelloSection />
           <Divider />

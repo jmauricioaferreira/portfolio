@@ -22,7 +22,7 @@ const SectionsObserver = () => {
 
     // Configuração do IntersectionObserver para ativação na visibilidade de pelo menos 30% da seção
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.3, // Detecta quando 30% da seção está visível
+      threshold: 0.4, // Detecta quando 30% da seção está visível
     });
 
     // Observa todas as seções do projeto

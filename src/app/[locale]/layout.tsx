@@ -33,6 +33,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={classNames(quicksand.variable, myFont.variable)}>
         <NextIntlClientProvider messages={messages}>
           {children}

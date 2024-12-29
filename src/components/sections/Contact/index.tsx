@@ -8,10 +8,6 @@ import { useRef } from "react";
 import { SECTIONS } from "src/constants/sections";
 import { Title } from "@components/shared/Title";
 import { useTranslations } from "next-intl";
-import { NameInput } from "./name-input";
-import { SendMessageButton } from "./send-message-button";
-import { MessageTextArea } from "./message-textarea";
-import { EmailInput } from "./email-input";
 import { Text } from "@components/shared/Text";
 import {
   motion,
@@ -19,6 +15,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
+import { ContactForm } from "./contact-form";
 
 export const ContactSection = () => {
   const t = useTranslations("Contact");
@@ -99,12 +96,7 @@ export const ContactSection = () => {
         </div>
         <div className="flex flex-col items-center w-full sm:w-fit sm:items-start sm:py-8 px-20 sm:px-64">
           <Title className={"flex"}>{t("title")}</Title>
-          <div className={`flex flex-col gap-12 w-full sm:max-w-[53rem]`}>
-            <NameInput />
-            <EmailInput />
-            <MessageTextArea />
-            <SendMessageButton />
-          </div>
+          <ContactForm />
         </div>
       </div>
 
