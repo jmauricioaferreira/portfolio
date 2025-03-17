@@ -1,13 +1,7 @@
-import classNames from "classnames";
 import Image from "next/image";
 import accessControl from "@public/access-control.png";
 import { Text } from "./Text";
 import { Highlighted } from "./HighLighted";
-import { div } from "framer-motion/client";
-
-type TextProps = {
-  className?: string;
-};
 
 const ShowcaseHeader = () => {
   return (
@@ -62,9 +56,7 @@ const ShowcaseFooter = () => {
   );
 };
 
-export const ProjectShowcase = (props: TextProps) => {
-  const { children, className } = props;
-
+export const ProjectShowcase = () => {
   return (
     <div className={`flex gap-10  px-64`}>
       <div className="flex-1">

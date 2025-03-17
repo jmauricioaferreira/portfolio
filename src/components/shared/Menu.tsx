@@ -24,7 +24,7 @@ export const Menu = (props: MenuProps) => {
         {Object.values(SECTIONS).map((section) => (
           <li key={section}>
             <Link href={`#${section}`} scroll={true}>
-              <div className="mb-3 relative group inline-block cursor-pointer">
+              <div className="mb-5 relative group inline-block cursor-pointer">
                 <Text
                   className={`${classes} hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-title-gradient-start to-title-gradient-end
 `}

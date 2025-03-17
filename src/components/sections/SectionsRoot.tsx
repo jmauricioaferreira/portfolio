@@ -5,9 +5,7 @@ type MenuProps = {
 };
 
 export const Sections = (props: MenuProps) => {
-  const { children, className, fontSize = "14" } = props;
-
-  const fontClass = `font-custom-${fontSize}`;
+  const { children } = props;
 
   return (
     <nav>

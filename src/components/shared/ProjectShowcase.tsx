@@ -6,10 +6,6 @@ import { Highlighted } from "./HighLighted";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-type TextProps = {
-  className?: string;
-};
-
 const ShowcaseHeader = () => {
   return (
     <div className="flex flex-col">
@@ -63,8 +59,7 @@ const ShowcaseFooter = () => {
   );
 };
 
-export const ProjectShowcase = (props: TextProps) => {
-  const { children, className } = props;
+export const ProjectShowcase = () => {
   const targetRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({

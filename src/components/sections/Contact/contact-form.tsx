@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { useTranslations } from "next-intl";
 
@@ -81,6 +81,7 @@ export const ContactForm = () => {
         placeholder={t("placeholders.message")}
       />
       <Button type="submit" className="w-full" id="name" name="Enviar" />
+      <p>{status}</p>
     </form>
   );
 };
