@@ -36,7 +36,11 @@ export const AboutMeSection = () => {
       >
         <div>
           <Title>{t("title")}</Title>
-          <Text className="w-[60rem] text-custom-24">{t("description")}</Text>
+          <div className=" flex flex-col gap-6 w-[60rem] text-custom-24">
+            <Text>{t("description.first")}</Text>
+            <Text>{t("description.second")}</Text>
+            <Text>{t("description.third")}</Text>
+          </div>
         </div>
       </motion.div>
       <motion.div ref={imageRef} style={{ x: imageX, opacity }}>
