@@ -26,12 +26,14 @@ module.exports = {
       {
         printWidth: 80,
         tabWidth: 2,
-        trailingComma: "all",
+        trailingComma: "all", // ✅ permite vírgulas finais
         arrowParens: "always",
         semi: true,
         endOfLine: "auto",
       },
     ],
+    "comma-dangle": ["error", "always-multiline"], // ✅ exige vírgulas finais em múltiplas linhas
+  },
     "no-useless-constructor": 0,
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

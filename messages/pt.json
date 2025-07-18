@@ -19,7 +19,11 @@
   },
   "AboutMe": {
     "title": "Sobre Mim",
-    "description": "Comecei minha carreira em 2021 como desenvolvedor frontend, trabalhando com JavaScript puro e focando em designs simples para várias empresas.Com o tempo, expandi minhas habilidades para o backend e me especializei ainda mais em desenvolvimento frontend. Eu tenho uma verdadeira paixão por criar landing pages cativantes. Atualmente, continuo como desenvolvedor frontend, usando JavaScript puro, React e Next.js para criar experiências digitais envolventes e eficazes, sempre seguindo as últimas tendências do setor. Sou bastante eclético musicalmente, apreciando tudo, desde MPB e sertanejo até eletrônico e pop. Além disso, adoro estar em contato com a natureza, fazer trilhas e correr nos parques da cidade. Tenho dois pets, o Cão, um cachorro, e Dani, uma gata, que ficam na fazenda quando viajo."
+    "description": {
+      "first": "Comecei minha carreira em 2021 como desenvolvedor frontend, trabalhando com JavaScript puro e focando em designs simples para várias empresas. ",
+      "second": "Eu tenho uma verdadeira paixão por criar landing pages cativantes.Atualmente, continuo como desenvolvedor frontend, usando JavaScript puro, React e Next.js para criar experiências digitais envolventes e eficazes, sempre seguindo as últimas tendências do setor. ",
+      "third": "Sou bastante eclético musicalmente, apreciando tudo, desde MPB e sertanejo até eletrônico e pop. Além disso, adoro estar em contato com a natureza, fazer trilhas e correr nos parques da cidade. Tenho dois pets, o Cão, um cachorro, e Dani, uma gata, que ficam na fazenda quando viajo."
+    }
   },
   "MyWork": {
     "title": "Meus Projetos",
@@ -27,15 +31,28 @@
   },
   "Reviews": {
     "title": "Reviews",
-    "description": "Opiniones de clientes"
+    "description": "Reviews de clientes"
   },
-    "Contact": {
-    "title": "Envie uma mensagem",
-    "description": "Contact me",
+  "Contact": {
+    "title": "Enviar mensagem",
+    "description": "Entre em contato comigo",
     "placeholders": {
       "name": "Digite seu nome",
       "email": "Digite seu e-mail",
-      "message": "Olá, estou interessado no seu trabalho. Podemos agendar um horário para discutir como você pode nos ajudar a simplificar nossos processos e criar sites visualmente atraentes?"
+      "message": "Digite sua mensagem"
+    },
+    "errors": {
+      "name": "Nome é obrigatório.",
+      "email": {
+        "required": "E-mail é obrigatório.",
+        "invalid": "E-mail inválido."
+      },
+      "message": "Mensagem é obrigatória."
+    },
+    "status": {
+      "sending": "Enviando...",
+      "success": "E-mail enviado com sucesso!",
+      "error": "Erro ao enviar o e-mail."
     }
   }
 }

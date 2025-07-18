@@ -1,10 +1,10 @@
 "use client";
-import { useTranslations } from "next-intl";
-import { SECTIONS } from "src/constants/sections";
-import { Title } from "@components/shared/Title";
 import { ProjectShowcase } from "@components/shared/ProjectShowcase";
+import { Title } from "@components/shared/Title";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
+import { SECTIONS } from "src/constants/sections";
 
 export const MyWorkSection = () => {
   const t = useTranslations("MyWork");
@@ -21,6 +21,7 @@ export const MyWorkSection = () => {
   return (
     <section
       id={SECTIONS.MY_WORK}
+      data-section-id={SECTIONS.MY_WORK}
       className={`h-min-screen py-64 relative`}
       ref={sectionRef}
     >

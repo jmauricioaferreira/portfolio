@@ -1,45 +1,40 @@
 "use client";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { SECTIONS } from "src/constants/sections";
 
-const SectionsObserver = () => {
-  const router = useRouter();
-
+export default function SectionsObserver() {
   useEffect(() => {
-    // Função de callback para o IntersectionObserver
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.id;
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-section-id]"),
+    );
+    if (!sections.length) return;
 
-          // Atualiza a URL sem afetar a rolagem
-          // Usamos a opção scroll: false para garantir que não haja mudança de posição ao trocar a URL
-          router.replace(`#${sectionId}`, { scroll: false });
+    const handleScroll = () => {
+      const viewportCenter = window.scrollY + window.innerHeight / 2;
+
+      // encontra a seção cujo centro está mais próximo do centro da viewport
+      let currentId = "";
+      let minDistance = Infinity;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const sectionCenter = rect.top + window.scrollY + rect.height / 2;
+        const distance = Math.abs(sectionCenter - viewportCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          currentId = section.getAttribute("data-section-id") || "";
         }
       });
-    };
 
-    // Configuração do IntersectionObserver para ativação na visibilidade de pelo menos 30% da seção
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: 0.4, // Detecta quando 30% da seção está visível
-    });
-
-    // Observa todas as seções do projeto
-    Object.values(SECTIONS).forEach((sectionId) => {
-      const sectionElement = document.getElementById(sectionId);
-      if (sectionElement) {
-        observer.observe(sectionElement);
+      if (currentId) {
+        history.replaceState(null, "", `#${currentId}`);
       }
-    });
-
-    // Limpa o observer quando o componente for desmontado
-    return () => {
-      observer.disconnect();
     };
-  }, [router]);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // inicial
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return null;
-};
-
-export default SectionsObserver;
+}

@@ -1,13 +1,13 @@
 "use client";
-import { useRef } from "react";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { useRef } from "react";
 
 import { Menu } from "@components/shared/Menu";
 import { Text } from "@components/shared/Text";
-import { SECTIONS } from "src/constants/sections";
 import logo from "@public/opacity.svg";
+import { SECTIONS } from "src/constants/sections";
 
 export const HelloSection = () => {
   const t = useTranslations("Hello");
@@ -31,6 +31,7 @@ export const HelloSection = () => {
   return (
     <motion.section
       id={SECTIONS.HELLO}
+      data-section-id={SECTIONS.HELLO}
       className={`h-screen `}
       ref={targetRef}
       style={{ opacity }}

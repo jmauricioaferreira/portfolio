@@ -12,11 +12,11 @@
     "description": "Transforming ideas into elegant and visually appealing solutions with <Highlighted>flexibility and attention to detail</Highlighted>, simplifying processes and delivering clear and concise code."
   },
   "AboutMe": {
-    "title": "Sobre Mim",
+    "title": "About Me",
     "description": {
-      "first": "Comecei minha carreira em 2021 como desenvolvedor frontend, trabalhando com JavaScript puro e focando em designs simples para várias empresas. ",
-      "second": "Eu tenho uma verdadeira paixão por criar landing pages cativantes.Atualmente, continuo como desenvolvedor frontend, usando JavaScript puro, React e Next.js para criar experiências digitais envolventes e eficazes, sempre seguindo as últimas tendências do setor. ",
-      "third": "Sou bastante eclético musicalmente, apreciando tudo, desde MPB e sertanejo até eletrônico e pop. Além disso, adoro estar em contato com a natureza, fazer trilhas e correr nos parques da cidade. Tenho dois pets, o Cão, um cachorro, e Dani, uma gata, que ficam na fazenda quando viajo."
+      "first": "I started my career in 2021 as a frontend developer, working with pure JavaScript and focusing on simple designs for various companies.",
+      "second": "I have a true passion for creating captivating landing pages. Currently, I continue as a frontend developer, using pure JavaScript, React, and Next.js to create engaging and effective digital experiences, always following the latest industry trends.",
+      "third": "I have eclectic musical tastes, enjoying everything from MPB and sertanejo to electronic and pop. Additionally, I love being in touch with nature, hiking, and running in city parks. I have two pets, Cão, a dog, and Dani, a cat, who stay on the farm when I travel."
     }
   },
   "MyWork": {
@@ -28,12 +28,25 @@
     "description": "Reviews de clientes"
   },
   "Contact": {
-    "title": "Send me a message",
+    "title": "Send a message",
     "description": "Contact me",
     "placeholders": {
       "name": "Enter your name",
       "email": "Enter your email",
-      "message": "Hello, I am interested in your work. Can we schedule a time to discuss how you can help simplify our processes and create visually appealing websites?"
+      "message": "Enter your message"
+    },
+    "errors": {
+      "name": "Name is required.",
+      "email": {
+        "required": "Email is required.",
+        "invalid": "Invalid email."
+      },
+      "message": "Message is required."
+    },
+    "status": {
+      "sending": "Sending...",
+      "success": "Email sent successfully!",
+      "error": "Error sending the email."
     }
   }
 }

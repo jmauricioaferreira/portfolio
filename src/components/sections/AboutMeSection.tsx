@@ -1,12 +1,12 @@
 "use client";
+import { Text } from "@components/shared/Text";
+import { Title } from "@components/shared/Title";
+import myself from "@public/jmaf.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useRef } from "react";
 import { SECTIONS } from "src/constants/sections";
-import { useTranslations } from "next-intl";
-import { Title } from "@components/shared/Title";
-import Image from "next/image";
-import myself from "@public/jmaf.png";
-import { Text } from "@components/shared/Text";
-import { motion, useScroll, useTransform } from "framer-motion";
 
 export const AboutMeSection = () => {
   const t = useTranslations("AboutMe");
@@ -18,7 +18,7 @@ export const AboutMeSection = () => {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end start"], // Controla quando a animação começa e termina
+    offset: ["start end", "end start"],
   });
   const textX = useTransform(scrollYProgress, [0.05, 0.4], ["-150%", "0px"]);
   const imageX = useTransform(scrollYProgress, [0.05, 0.4], ["250%", "0px"]);
@@ -27,6 +27,7 @@ export const AboutMeSection = () => {
     <motion.section
       className={`flex h-screen bg-gradient-start justify-center items-center`}
       id={SECTIONS.ABOUT_ME}
+      data-section-id={SECTIONS.ABOUT_ME}
       ref={targetRef}
     >
       <motion.div

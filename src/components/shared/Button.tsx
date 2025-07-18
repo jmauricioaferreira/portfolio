@@ -6,25 +6,37 @@ type ButtonProps = {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 };
 
 export const Button = (props: ButtonProps) => {
-  const { className, id, name, onClick, type = "button" } = props;
+  const {
+    className,
+    id,
+    name,
+    onClick,
+    type = "button",
+    disabled = false,
+  } = props;
 
-  const classes = classNames(className);
+  const classes = classNames(
+    className,
+    "text-gradient-middle font-semibold h-20 text-custom-18 w-full sm:max-w-[25.4rem] flex justify-center items-center rounded-lg font-quicksand bg-gradient-to-r transition-all duration-300",
+    {
+      "hover:filter hover:brightness-110 cursor-pointer": !disabled,
+      "opacity-50 cursor-not-allowed": disabled,
+    },
+  );
 
   return (
-    <div
-      className={`flex hover:filter hover:brightness-110 justify-center rounded-lg items-center font-quicksand text-custom-18 bg-gradient-to-r h-[5.8rem] w-full  sm:max-w-[25.4rem] ${classes}`}
+    <button
+      type={type}
+      id={id}
+      className={classes}
+      onClick={onClick}
+      disabled={disabled}
     >
-      <button
-        type={type}
-        id={id}
-        className={`text-gradient-middle font-semibold w-full h-full`}
-        onClick={onClick}
-      >
-        {name}
-      </button>
-    </div>
+      {name}
+    </button>
   );
 };

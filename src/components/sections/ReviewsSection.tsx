@@ -1,14 +1,13 @@
 "use client";
-import { useTranslations } from "next-intl";
-import { SECTIONS } from "src/constants/sections";
-import { Title } from "@components/shared/Title";
-import quote from "@public/quotes.svg";
-import opacity from "@public/opacity.svg";
 import { Text } from "@components/shared/Text";
+import { Title } from "@components/shared/Title";
+import opacity from "@public/opacity.svg";
+import quote from "@public/quotes.svg";
+import { useTranslations } from "next-intl";
 
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 export const ReviewsSection = () => {
   const t = useTranslations("Reviews");
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -24,7 +23,8 @@ export const ReviewsSection = () => {
   return (
     <section
       className={`flex gap-40 relative justify-center items-center h-screen `}
-      id={SECTIONS.REVIEWS}
+      // id={SECTIONS.REVIEWS}
+      id={"reviews"}
       ref={sectionRef}
     >
       <motion.div

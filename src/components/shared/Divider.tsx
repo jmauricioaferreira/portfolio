@@ -1,8 +1,4 @@
 "use client";
-import { useTranslations } from "next-intl";
-import { Text } from "./Text";
-import { Highlighted } from "./HighLighted";
-import Image from "next/image";
 import logo from "@public/opacity.svg";
 import {
   motion,
@@ -11,7 +7,11 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useRef } from "react";
+import { Highlighted } from "./HighLighted";
+import { Text } from "./Text";
 
 export const Divider = () => {
   const t = useTranslations("Hello");

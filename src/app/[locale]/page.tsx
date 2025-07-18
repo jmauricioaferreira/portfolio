@@ -2,9 +2,8 @@ import { AboutMeSection } from "@components/sections/AboutMeSection";
 import { ContactSection } from "@components/sections/Contact";
 import { HelloSection } from "@components/sections/HelloSection";
 import { MyWorkSection } from "@components/sections/MyWorkSection";
-import { ReviewsSection } from "@components/sections/ReviewsSection";
-import { Divider } from "@components/shared/Divider";
 import SectionsObserver from "@components/sections/SectionsObserver";
+import { Divider } from "@components/shared/Divider";
 import { Header } from "@components/shared/Header";
 
 export default function Home() {
@@ -20,7 +19,7 @@ export default function Home() {
         <AboutMeSection />
         <div className="bg-gradient-primary">
           <MyWorkSection />
-          <ReviewsSection />
+          {/* <ReviewsSection /> */}
         </div>
         <ContactSection />
       </main>
