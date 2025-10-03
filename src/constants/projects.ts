@@ -1,34 +1,51 @@
 import { Technology } from "./technologies";
 
-type Project = {
+export interface Project {
   id: number;
-  name: string;
+  translationKey: string; // Chave para tradução (ex: "defense-ia")
   year: number;
-  description: string;
   technologiesUsed: Technology[];
   imageUrl: string;
-};
+  alt?: string;
+}
 
 export const Projects: Project[] = [
   {
     id: 1,
-    name: "Meu Portfólio",
-    year: 2024,
-    description: "Um portfólio criado para exibir meus projetos e habilidades.",
+    translationKey: "defense-ia",
+    year: 2023,
     technologiesUsed: [
       Technology.React,
       Technology.NextJS,
+      Technology.TypeScript,
       Technology.TailwindCSS,
     ],
-    imageUrl: "link-da-imagem-aqui",
+    imageUrl: "/access-control.png",
+    alt: "Sistema de controle de acesso Defense IA",
   },
   {
     id: 2,
-    name: "Aplicativo de Manipulação de Vídeos",
+    translationKey: "qr-creator",
+    year: 2025,
+    technologiesUsed: [
+      Technology.React,
+      Technology.NextJS,
+      Technology.TypeScript,
+      Technology.TailwindCSS,
+    ],
+    imageUrl: "/qr-code-creator.png",
+    alt: "Gerador de códigos QR",
+  },
+  {
+    id: 3,
+    translationKey: "video-cleaner",
     year: 2023,
-    description:
-      "Aplicação para carregar vídeos e limpar metadados usando FFmpeg.",
-    technologiesUsed: [Technology.React, Technology.FFmpeg],
-    imageUrl: "link-da-imagem-aqui",
+    technologiesUsed: [
+      Technology.React,
+      Technology.TypeScript,
+      Technology.FFmpeg,
+    ],
+    imageUrl: "/video-cleaner.png",
+    alt: "Aplicativo de limpeza de metadados de vídeo",
   },
 ];

@@ -23,6 +23,20 @@
     "title": "My Work",
     "description": "The technologies I use are listed below."
   },
+  "Projects": {
+    "defense-ia": {
+      "name": "DEFENSE IA - ACCESS CONTROL",
+      "description": "Intelligent access control system with AI for enterprise security. Developed with modern technologies to ensure maximum security and efficiency."
+    },
+    "qr-creator": {
+      "name": "QR CODE CREATOR",
+      "description": "Web application for creating and customizing QR codes with different styles and functionalities. Intuitive and responsive interface."
+    },
+    "video-cleaner": {
+      "name": "VIDEO METADATA CLEANER",
+      "description": "Desktop application for cleaning video metadata using FFmpeg. Modern interface with drag-and-drop for easy use."
+    }
+  },
   "Reviews": {
     "title": "Reviews",
     "description": "Reviews de clientes"
