@@ -51,22 +51,23 @@ export const Divider = () => {
       transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
+  
   return (
-    <div className="flex h-screen relative items-center justify-between gap-40 w-full h-50 pt-20 px-5 my-32">
+    <div className="flex h-screen relative items-center justify-center lg:justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-32 2xl:gap-40 w-full pt-16 sm:pt-20 md:pt-24 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-5 my-16 sm:my-20 md:my-24 lg:my-32">
       <motion.div
         ref={lineRef}
         style={{ width: lineWidth }}
-        className="flex h-px bg-primary-green top-0"
+        className="h-px bg-primary-green top-0 hidden lg:block"
       ></motion.div>
 
       <motion.div
-        className="flex w-1/2 "
+        className="flex w-full lg:w-1/2 justify-center lg:justify-start"
         style={{
           opacity: textOpacity,
           x: textX,
         }}
       >
-        <Text className="text-custom-32 w-[75.6rem] font-medium">
+        <Text className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-custom-32 w-full max-w-4xl lg:max-w-none lg:w-[75.6rem] font-medium text-center lg:text-left">
           {t.rich("description", {
             Highlighted: (children) => <Highlighted>{children}</Highlighted>,
           })}
@@ -75,12 +76,21 @@ export const Divider = () => {
 
       <motion.div
         ref={imageRef}
-        className="absolute right-1/3 top-1/3"
+        className="absolute right-4 sm:right-6 md:right-8 lg:right-1/3 top-1/4 sm:top-1/3 lg:top-1/3"
         variants={imageVariants}
         initial="hidden"
         animate={controls}
       >
-        <Image src={logo} width={500} height={500} alt={""} />
+        <Image 
+          src={logo} 
+          width={300}
+          height={300}
+          alt=""
+          style={{
+            width: 'clamp(150px, 15vw, 500px)',
+            height: 'clamp(150px, 15vw, 500px)',
+          }}
+        />
       </motion.div>
     </div>
   );
