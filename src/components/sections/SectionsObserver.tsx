@@ -8,32 +8,56 @@ export default function SectionsObserver() {
     );
     if (!sections.length) return;
 
-    const handleScroll = () => {
-      const viewportCenter = window.scrollY + window.innerHeight / 2;
+    let activeId = "";
 
-      // encontra a seção cujo centro está mais próximo do centro da viewport
-      let currentId = "";
-      let minDistance = Infinity;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (!visible.length) return;
 
+        visible.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const top = visible[0];
+        const id = top.target.getAttribute("data-section-id") || "";
+        if (id && id !== activeId) {
+          activeId = id;
+          history.replaceState(null, "", `#${id}`);
+          window.dispatchEvent(
+            new CustomEvent("sectionchange", { detail: id }),
+          );
+        }
+      },
+      { threshold: [0.4, 0.6, 0.8] },
+    );
+
+    sections.forEach((s) => observer.observe(s));
+
+    const init = () => {
+      const y = window.scrollY + window.innerHeight / 2;
+      let best = "";
+      let min = Infinity;
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        const sectionCenter = rect.top + window.scrollY + rect.height / 2;
-        const distance = Math.abs(sectionCenter - viewportCenter);
-        if (distance < minDistance) {
-          minDistance = distance;
-          currentId = section.getAttribute("data-section-id") || "";
+        const center = rect.top + window.scrollY + rect.height / 2;
+        const d = Math.abs(center - y);
+        if (d < min) {
+          min = d;
+          best = section.getAttribute("data-section-id") || "";
         }
       });
-
-      if (currentId) {
-        history.replaceState(null, "", `#${currentId}`);
+      if (best) {
+        activeId = best;
+        history.replaceState(null, "", `#${best}`);
+        window.dispatchEvent(
+          new CustomEvent("sectionchange", { detail: best }),
+        );
       }
     };
+    init();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // inicial
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      sections.forEach((s) => observer.unobserve(s));
+      observer.disconnect();
+    };
   }, []);
 
   return null;

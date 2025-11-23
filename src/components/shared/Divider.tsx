@@ -51,7 +51,7 @@ export const Divider = () => {
       transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
-  
+
   return (
     <div className="flex h-screen relative items-center justify-center lg:justify-between gap-8 sm:gap-12 md:gap-16 lg:gap-20 xl:gap-32 2xl:gap-40 w-full pt-16 sm:pt-20 md:pt-24 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-5 my-16 sm:my-20 md:my-24 lg:my-32">
       <motion.div
@@ -67,7 +67,7 @@ export const Divider = () => {
           x: textX,
         }}
       >
-        <Text className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-custom-32 w-full max-w-4xl lg:max-w-none lg:w-[75.6rem] font-medium text-center lg:text-left">
+        <Text className="text-lg  sm:text-xl md:text-2xl lg:text-3xl xl:text-custom-32   w-full max-w-4xl lg:max-w-none lg:w-[75.6rem] font-medium text-center lg:text-left">
           {t.rich("description", {
             Highlighted: (children) => <Highlighted>{children}</Highlighted>,
           })}
@@ -81,14 +81,14 @@ export const Divider = () => {
         initial="hidden"
         animate={controls}
       >
-        <Image 
-          src={logo} 
+        <Image
+          src={logo}
           width={300}
           height={300}
           alt=""
           style={{
-            width: 'clamp(150px, 15vw, 500px)',
-            height: 'clamp(150px, 15vw, 500px)',
+            width: "clamp(150px, 15vw, 500px)",
+            height: "clamp(150px, 15vw, 500px)",
           }}
         />
       </motion.div>

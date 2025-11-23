@@ -75,40 +75,40 @@ export const ProjectShowcase = ({ project }: ProjectShowcaseProps) => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 1024);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start end", "end start"], // Controla quando a animação começa e termina
   });
-  
+
   // Animações mais suaves para mobile
   const textX = useTransform(scrollYProgress, [0.1, 0.4], ["-50%", "0px"]);
   const imageX = useTransform(scrollYProgress, [0.1, 0.4], ["50%", "0px"]);
   const opacity = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  
+
   const projectName = t(`${project.translationKey}.name`);
   const projectDescription = t(`${project.translationKey}.description`);
-  
+
   return (
-    <motion.div 
-      className="flex flex-col lg:flex-row gap-6 lg:gap-10 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64" 
+    <motion.div
+      className="flex flex-col lg:flex-row gap-6 lg:gap-10 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-64"
       ref={targetRef}
     >
-      <motion.div 
-        className="w-full lg:flex-1 rounded-xl overflow-hidden order-2 lg:order-1" 
-        style={{ 
-          x: isMobile ? 0 : textX, // Desabilita animação X em mobile
-          opacity 
+      <motion.div
+        className="w-full lg:flex-1 rounded-xl overflow-hidden order-2 lg:order-1"
+        style={{
+          x: isMobile ? 0 : textX,
+          opacity,
         }}
       >
-        <Image 
-          src={project.imageUrl} 
+        <Image
+          src={project.imageUrl}
           alt={project.alt || projectName}
           width={800}
           height={600}
@@ -117,9 +117,9 @@ export const ProjectShowcase = ({ project }: ProjectShowcaseProps) => {
       </motion.div>
       <motion.div
         className="flex flex-col w-full lg:w-[67rem] gap-4 lg:gap-8 order-1 lg:order-2"
-        style={{ 
-          x: isMobile ? 0 : imageX, // Desabilita animação X em mobile
-          opacity 
+        style={{
+          x: isMobile ? 0 : imageX,
+          opacity,
         }}
       >
         <ShowcaseHeader year={project.year} name={projectName} />

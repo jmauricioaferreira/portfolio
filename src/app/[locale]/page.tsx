@@ -19,7 +19,6 @@ export default function Home() {
         <AboutMeSection />
         <div className="bg-gradient-primary">
           <MyWorkSection />
-          {/* <ReviewsSection /> */}
         </div>
         <ContactSection />
       </main>

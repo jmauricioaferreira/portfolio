@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useRef } from "react";
 
-import { Menu } from "@components/shared/Menu";
 import { Text } from "@components/shared/Text";
 import logo from "@public/opacity.svg";
 import { SECTIONS } from "src/constants/sections";
@@ -54,8 +53,8 @@ export const HelloSection = () => {
             height={300}
             alt=""
             style={{
-              width: 'clamp(200px, 25vw, 500px)',
-              height: 'clamp(200px, 25vw, 500px)',
+              width: "clamp(200px, 25vw, 500px)",
+              height: "clamp(200px, 25vw, 500px)",
             }}
           />
         </motion.div>
@@ -89,9 +88,6 @@ export const HelloSection = () => {
                   {t("position")}
                 </Text>
               </div>
-            </div>
-            <div className="hidden lg:block">
-              <Menu />
             </div>
           </motion.div>
         </div>

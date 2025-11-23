@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import classNames from "classnames";
 import { Quicksand } from "next/font/google";
 import { getMessages } from "next-intl/server";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 
